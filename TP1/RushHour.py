@@ -37,7 +37,7 @@ class RushHour:
         print "Pas de solution"
         return None
 
-    ''' CHANGE THIS TO USE PRIORITY QUEUE'''
+    ''' CHANGE THIS TO USE PRIORITY QUEUE "HEAPQ" '''
     def solveAStart(self, s):
         visited = set()
         visited.add(s)

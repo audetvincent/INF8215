@@ -30,6 +30,12 @@ class State:
     def pos(self):
         return self.__pos
 
+    def prev(self):
+        return self.__prev
+
     def __eq__(self, other):
+        '''TODO'''
+
+    def __ne__(self, other):
         '''TODO'''
 
