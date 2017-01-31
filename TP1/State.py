@@ -1,17 +1,20 @@
-# SHEBANG
+#!/usr/bin/env python
 import array
 
 class State:
 
-    def __init__(self, rh, p=None):
-        self.__pos = [None] * p.len
-        for i in p.len:
+    def __init__(self, p=None, rh = None):
+        self.__pos = [None] * len(p)
+        for i in xrange(len(p)):
             self.__pos[i] = p[i]
         self.__n = 0
         self.__prev = None
         self.__rh = rh
+        self.__c = 0
+        self.__d = 0
+        self.__f = 0
 
-    # constructeur d'un état a partir d'un etat s et d'un mouvement (c,d)
+    '''constructeur d'un etat a partir d'un etat s et d'un mouvement (c,d)'''
     def State(self, s, c, d):
         '''TODO'''
 
@@ -26,12 +29,6 @@ class State:
     def estimee2(self):
         '''TODO'''
         return 0
-
-    def pos(self):
-        return self.__pos
-
-    def prev(self):
-        return self.__prev
 
     def __eq__(self, other):
         '''TODO'''
