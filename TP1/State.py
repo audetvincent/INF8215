@@ -16,10 +16,12 @@ class State:
 
     '''constructeur d'un etat a partir d'un etat s et d'un mouvement (c,d)'''
     def State(self, s, c, d):
-        '''TODO'''
+        self.__prev = s
+        s.__pos[c] += d
 
     def success(self):
-        '''TODO'''
+        if self.__pos[0] == 4:
+            return True
         return False
 
     def estimee1(self):

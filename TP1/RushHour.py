@@ -19,7 +19,8 @@ class RushHour:
         self.__horiz = horiz
         self.__len = len
         self.__moveon = moveon
-        self.__nbMoves = nbMoves        
+        self.__nbMoves = nbMoves
+        self.__free = []
 
     def initFree(self, s):
         '''TODO'''
