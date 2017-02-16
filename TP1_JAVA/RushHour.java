@@ -116,6 +116,9 @@ public class RushHour {
 			temp = Q.remove();
 			if(!visited.contains(temp)) {
 				if(temp.success()){
+					//Astar
+					int nbStates = visited.size();
+					System.out.println(nbStates + " etats visites");
 					return temp;
 				}
 				else {
@@ -129,10 +132,25 @@ public class RushHour {
 	}
 
 	public State solveAstar(State s) {
+		State temp;
 		HashSet<State> visited = new HashSet<State>();
-		visited.add(s);
 		PriorityQueue<State> Q = new PriorityQueue<State>(10, new MyComparator());
-		//TODO
+		Q.add(s);
+		while(!Q.isEmpty()) {
+			temp = Q.remove();
+			if(!visited.contains(temp)) {
+				if(temp.success()){
+					//Astar
+					int nbStates = visited.size();
+					System.out.println(nbStates + " etats visites");
+					return temp;
+				}
+				else {
+					visited.add(temp);
+					Q.addAll(moves(temp));
+				}
+			}
+		}
 		System.out.println("pas de solution");
 		return null;
 	}
@@ -142,7 +160,6 @@ public class RushHour {
 	 */
 
 	void printSolution(State s) {
-		System.out.println(s.n + " mouvements");
 		ArrayList<String> solution = new ArrayList<String>();
 		while(s.prev != null) {
 			if(horiz[s.c] == true && s.d ==1) {
@@ -164,6 +181,7 @@ public class RushHour {
 			s = s.prev;
 		}
 		
+		System.out.println(solution.size() + " mouvements");
 		//Print in reverse order because we start with final solution
 		for(int i = solution.size() - 1; i >= 0; i--) {
 			System.out.println(solution.get(i));

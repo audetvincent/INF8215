@@ -44,10 +44,13 @@ public class State {
 		for(int i = 0; i < pos.length; i++)
 			pos[i] = s.pos[i];
 		pos[c] += d;
-		//Needed to correctly print solution
-		n = s.n + 1;
 		this.c = c;
 		this.d = d;
+		//Astar
+		n = s.n + 1;
+		//f = n;
+		//f = n + estimee1();
+		f = n + estimee2();
 	}
 
 
@@ -62,13 +65,31 @@ public class State {
 	 * Estimation du nombre de coup restants
 	 */
 	public int estimee1() {
-		// TODO
-		return 0;
+		int distance;
+		distance = 4 - this.pos[0];
+		return distance;
 	}
 
 	public int estimee2() {
-		// TODO
-		return 0;
+		int distance;
+		int x, y;
+		distance = 4 - this.pos[0];
+		for(int i = 0; i < rh.nbcars; i++) {
+			//Make sure car is vertical
+			if(rh.horiz[i] == false) {
+				y = rh.moveon[i];
+				x = this.pos[i];
+				//Make sure car is in front of red car in the y axis
+				if(y >= this.pos[0] + rh.len[0]) {
+					//Make sure car intersects the exit row (2)
+					for(int j = 0; j < rh.len[i]; j++) {
+						if(x + j == 2)
+							distance++;
+					}
+				}
+			}
+		}
+		return distance;
 	}
 
 	@Override

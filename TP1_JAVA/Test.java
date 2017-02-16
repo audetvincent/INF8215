@@ -6,10 +6,10 @@ public class Test {
 		//test2();
 		//test3();
 		//test4();
-		 solve22();
-		// solve1();
-		// solve40();
-		// solveAstar();
+		solve22();
+		//solve1();
+		//solve40();
+		//solveAstar();
 	}
 
 	static void test1() {
@@ -112,7 +112,12 @@ public class Test {
 		rh.len = new int[] { 2, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 3 };
 		rh.moveon = new int[] { 2, 2, 0, 0, 3, 1, 1, 3, 0, 4, 5, 5 };
 		State s = new State(new int[] { 1, 0, 3, 1, 1, 4, 3, 4, 4, 2, 4, 1 }, rh);
-		s = rh.solve(s);
+		long startTime = System.nanoTime();
+		//s = rh.solve(s);
+		s = rh.solveAstar(s);
+		long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println("duration = " + (duration / 1000000) + " milliseconds");
 		rh.printSolution(s);
 	}
 
@@ -125,7 +130,12 @@ public class Test {
 		rh.len = new int[] { 2, 2, 3, 2, 3, 2, 3, 3 };
 		rh.moveon = new int[] { 2, 0, 0, 0, 5, 4, 5, 3 };
 		State s = new State(new int[] { 1, 0, 1, 4, 2, 4, 0, 1 }, rh);
-		s = rh.solve(s);
+		long startTime = System.nanoTime();
+		//s = rh.solve(s);
+		s = rh.solveAstar(s);
+		long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println("duration = " + (duration / 1000000) + " milliseconds");
 		rh.printSolution(s);
 	}
 
@@ -139,7 +149,12 @@ public class Test {
 		rh.len = new int[] { 2, 3, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2 };
 		rh.moveon = new int[] { 2, 0, 0, 4, 1, 2, 5, 3, 3, 2, 4, 5, 5 };
 		State s = new State(new int[] { 3, 0, 1, 0, 1, 1, 1, 0, 3, 4, 4, 0, 3 }, rh);
-		s = rh.solve(s);
+		long startTime = System.nanoTime();
+		//s = rh.solve(s);
+		s = rh.solveAstar(s);
+		long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println("duration = " + (duration / 1000000) + " milliseconds");
 		rh.printSolution(s);
 	}
 
