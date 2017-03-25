@@ -29,6 +29,35 @@ ask(plante, X):-
     Response = 'oui'.
 
 /* 2e Niveau */
+ask(cuire, X):-
+    format('Est-ce que l objet permet de cuire ou rechauffer de la nourriture ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(vaisselle, X):-
+    format('Est-ce que l objet est de la vaisselle ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(dessus, X):-
+    format('Est-ce que l on peut deposer d autres objets sur cet objet ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(griller, X):-
+    format('Est-ce que l objet permet de griller ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(pique, X):-
+    format('Est-ce que l objet possede des piques ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(remplissable, X):-
+    format('Est-ce qu on peut mettre de la matiere dans l objet (liquide ou solide) ?', [X]),
+    read(Response),
+    Response = 'oui'.
+ask(poche, X):-
+    format('Est-ce que l objet peut se transporter dans une poche ?', [X]),
+    read(Response),
+    Response = 'oui'.
+
 
 
 objet(X):-
@@ -51,7 +80,7 @@ electrique(X):-
     menage(X),
     electricite(X).
 electrique(X):-
-    reste(X),
+    lumiere(X),
     electricite(X).
 
 non_electrique(X):-
@@ -79,7 +108,7 @@ non_electrique(X):-
     plante(X),
     sans_electricite(X).
 non_electrique(X):-
-    reste(X),
+    savon(X),
     sans_electricite(X).
 
 
@@ -87,8 +116,8 @@ cuisine(X):-
     ask(cuire, X),
     cuire(X).
 cuisine(X):-
-    ask(liquide, X),
-    liquide(X).
+    ask(remplissable, X),
+    remplissable(X).
 cuisine(X):-
     ask(vaisselle, X),
     vaisselle(X).
@@ -96,7 +125,13 @@ cuisine(X):-
     ask(dessus, X),
     dessus(X).
 cuisine(X):-
-    reste(X).
+    nettoyant(X).
+
+vaisselle(X):-
+    ask(pique, X),
+    pique(X).
+vaisselle(X):-
+    plat(X).
 
 transportable(X):-
     ask(poche, X),
@@ -104,6 +139,16 @@ transportable(X):-
 transportable(X):-
     ask(remplissable, X),
     remplissable(X).
+transportable(X):-
+    sac(X).
+transportable(X):-
+    bois(X).
+
+poche(X):-
+    ask(remplissable, X),
+    remplissable(X).
+poche(X):-
+    metal(X).
 
 cuire(X):-
     ask(griller, X),
@@ -112,13 +157,7 @@ cuire(X):-
     ask(dessus, X),
     dessus(X).
 cuire(X):-
-    reste(X).
-
-poche(X):-
-    ask(remplissable, X),
-    remplissable(X).
-
-
+    onde(X).
 
 
 electricite('Grille-pain').
@@ -148,3 +187,24 @@ sans_electricite('Shampoing').
 
 griller('Grille-pain').
 dessus('Cuisiniere').
+onde('Four micro-onde').
+remplissable('Cafetiere').
+poche('Telephone').
+sac('Ordinateur').
+menage('Aspirateur').
+lumiere('Lampe').
+pique('Fourchette').
+plat('Assiette').
+remplissable('Casserole').
+dessus('Table').
+nettoyant('Detergent a vaisselle').
+remplissable('Porte-Feuille').
+remplissable('Sac a dos').
+metal('Cle').
+bois('Papier').
+menage('Balai').
+musique('Piano').
+dormir('Lit').
+plante('Cactus').
+savon('Shampoing').
+

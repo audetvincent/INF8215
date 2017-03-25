@@ -25,14 +25,21 @@ Brad Pitt
 
 ELECTRIQUE :
 	CUISINE :
-		Four micro-onde
-		Cuisiniere
-		Cafetiere
-		Grille-pain
+		CUIRE:
+			DESSUS:
+				Cuisiniere
+			GRILLER :
+				Grille-pain
+			ONDE:
+				Four micro-onde
+		REMPLISSABLE:
+			Cafetiere
 	
 	TRANSPORTABLE :
-		Ordinateur
-		Telephone
+		POCHE:
+			Telephone
+		SAC:
+			Ordinateur
 		
 	MENAGE:
 		Aspirateur
@@ -42,17 +49,28 @@ ELECTRIQUE :
 		
 NON-ELECTRIQUE:
 	CUISINE :
-		Fourchette
-		Assiette
-		Table
-		Casserole
-		Detergent a vaisselle
+		VAISSELLE:
+			PIQUE:
+				Fourchette
+			PLAT:
+				Assiette
+		DESSUS:
+			Table
+		REMPLISSABLE:
+			Casserole
+		NETTOYANT:
+			Detergent a vaisselle
 	
 	TRANSPORTABLE :
-		Cle
-		Porte-feuille
-		Sac a dos 
-		Papier	
+		POCHE:
+			REMPLISSABLE:
+				Porte-feuille
+			METAL:
+				Cle
+		REMPLISSABLE¸:
+			Sac a dos 
+		BOIS:
+			Papier	
 	MENAGE :
 		Balai
 	
