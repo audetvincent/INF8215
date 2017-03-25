@@ -1,0 +1,69 @@
+Michael Jackson
+Julie Snyder
+Stephen Harper
+Moise
+Wolgang Amadeus
+Mozart Mario
+Michel Gagnon
+Lara Croft
+Blanche-Neige
+J.K. Rowling
+Rafal Nadal
+Jacques Villeneuve
+Garfield
+Cleopatre VII
+Michel Dagenais
+Victor Hugo
+John Lewis
+Jesus
+Pape Francois
+Eugenie Bouchard
+James Bond
+Brad Pitt
+
+
+
+ELECTRIQUE :
+	CUISINE :
+		Four micro-onde
+		Cuisiniere
+		Cafetiere
+		Grille-pain
+	
+	TRANSPORTABLE :
+		Ordinateur
+		Telephone
+		
+	MENAGE:
+		Aspirateur
+	
+	RESTE :
+		Lampe
+		
+NON-ELECTRIQUE:
+	CUISINE :
+		Fourchette
+		Assiette
+		Table
+		Casserole
+		Detergent a vaisselle
+	
+	TRANSPORTABLE :
+		Cle
+		Porte-feuille
+		Sac a dos 
+		Papier	
+	MENAGE :
+		Balai
+	
+	MUSIQUE : 
+		piano
+		
+	DORMIR :
+		Lit
+	
+	VIVANT :
+		Cactus
+	
+	RESTE : 
+		Shampoing

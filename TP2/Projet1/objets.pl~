@@ -1,0 +1,14 @@
+ask(ELECTRIQUE, X):-
+    format('Est-ce que l objet à besoin d électricité pour fonctionner ?',[X]),
+    read(Response),
+    Rsponse = 'oui'.
+ask(CUISINE, X):-
+    format('Est-ce que l objet se retrouve principalement dans une cuisine ?',[X]),
+    read(Response),
+    Rsponse = 'oui'.
+
+
+
+objet(X):-
+    ask(electrique,X),
+    electrique(X).
