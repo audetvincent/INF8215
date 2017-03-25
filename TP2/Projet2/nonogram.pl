@@ -64,7 +64,7 @@ valid_seq_rest([SIZECHUNK | CONSTRAINTS_TAIL], [1 | SEQ_TAIL]) :-
 /*Si la liste de LINESPECS est vide, les autres variables sont anonymes.*/
 valid_lines([], _, _).
 
-/*On divide la liste de LINESPECS en head et tail, puis on appelle
+/*On divise la liste de LINESPECS en head et tail, puis on appelle
 * valid_line (voir fonction plus bas) sur la premiere ligne et le
 * head. Ensuite, on incrémente l'index de la ligne et on recommence
 * récursivement.*/
@@ -73,7 +73,8 @@ valid_lines([LINESSPECS | LINESSPECS_TAIL], LINES, FIRSTLINE) :-
 	FIRSTLINE_PLUSONE is FIRSTLINE + 1,
 	valid_lines(LINESSPECS_TAIL, LINES, FIRSTLINE_PLUSONE).
 
-/*On extrait (voir fonction plus bas) dans LIGNE la ligne à l'index.*/
+/*On extrait (voir fonction plus bas) dans LIGNE la ligne à l'index.
+* pour être en mesure de la valider.*/
 valid_line(INDEX, LINESSPECS, LINES) :-
 	extract(INDEX, LINES, LINE),
 	valid_seq(LINESSPECS, LINE).
@@ -95,7 +96,7 @@ valid_columns([COLUMNSPECS | COLUMNSPECS_TAIL], LINES, FIRSTCOLUMN) :-
 	valid_columns(COLUMNSPECS_TAIL, LINES, FIRSTCOLUMN_PLUSONE).
     
 /*On extrait (voir fonction plus bas) dans COLUMN la colonne à l'index.
-* et on s'assurer, à l'aide de valid_seq, que ça fonctionne. */
+* pour être en mesure de la valider.*/
 valid_column(INDEX, COLUMNSPECS, LINES) :-
 	extract(INDEX, LINES, COLUMN),
 	valid_seq(COLUMNSPECS, COLUMN).
